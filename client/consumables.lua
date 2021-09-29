@@ -172,6 +172,16 @@ AddEventHandler("consumables:client:ResetArmor", function()
     end
 end)
 
+RegisterNetEvent('consumables:client:repairkit')
+AddEventHandler('consumables:client:repairkit', function()
+QBCore.Functions.Notify("You used a Repair Kit, it will take a few moments to fix your vehicle.", "error")
+end)
+
+RegisterNetEvent('consumables:client:advancedrepairkit')
+AddEventHandler('qb-items:client:use:advancedrepairkit', function()
+QBCore.Functions.Notify("You used a Advanced Repair Kit, you have instantly fixed your vehicle.", "error")
+end)
+
 RegisterNetEvent("consumables:client:DrinkAlcohol")
 AddEventHandler("consumables:client:DrinkAlcohol", function(itemName)
     TriggerEvent('animations:client:EmoteCommandStart', {"drink"})
